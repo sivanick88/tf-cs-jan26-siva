@@ -11,6 +11,16 @@ module "Vms_app1" {
   env = "dev"
 }
 
+module "Web_SG01" {
+  source = "git::https://github.com/sivanick88/tf-aws-modules-jan26-siva.git//security-groups?ref=main"
+  project = "Siva"
+  vpc_id = data.aws_vpc.default.id
+}
+
+data "aws_vpc" "default" {
+  default = true
+}
+
 output "vm_private_ips01" {
   value = module.Vms_app1.vm_priv_pips
 }
