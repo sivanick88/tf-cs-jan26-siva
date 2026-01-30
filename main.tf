@@ -1,6 +1,6 @@
-/*provider "aws" {
+provider "aws" {
   region = "us-west-1"
-}*/
+}
 
 module "Vms_app1" {
   source = "git::https://github.com/sivanick88/tf-aws-modules-jan26-siva.git//ec2-instance?ref=main"
